@@ -6,6 +6,8 @@ def OddNumbers.Odd (n : ℕ) : Prop := ∃ k, n = 2 * k + 1
 
 def OddNumbers.Even (n : ℕ) : Prop := ∃ k, n = 2 * k
 
+def OddNumbers.Prime (n : ℕ) : Prop := ∀ d, d ∣ n → d = 1 ∨ d = n
+
 theorem odd_iff_exists_two_mul_add_one (n : ℕ) : OddNumbers.Odd n ↔ ∃ k, n = 2 * k + 1 :=
   -- The `Iff` constructor is used to create a logical equivalence
   Iff.refl _
